@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $product_id
  * @property int $document_id
+ * @property int $old Было единиц товара
  * @property int $count
+ * @property int $new Стало единиц товара
  */
 class ProductDocumentRegistration extends Model
 {
@@ -19,6 +21,8 @@ class ProductDocumentRegistration extends Model
     protected $fillable = [
         'product_id',
         'document_id',
+        'old',
         'count',
+        'new',
     ];
 }
