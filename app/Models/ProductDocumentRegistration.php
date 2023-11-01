@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * @property int $product_id
+ * @property int $document_id
+ * @property int $count
+ */
+class ProductDocumentRegistration extends Model
+{
+    use HasFactory;
+
+    protected $table = 'product_document_registrations';
+
+    protected $fillable = [
+        'product_id',
+        'document_id',
+        'count',
+    ];
+}
