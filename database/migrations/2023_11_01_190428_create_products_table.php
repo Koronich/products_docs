@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name')->nullable(false);
             $table->unsignedBigInteger('count')->default(0)->nullable(false);
             $table->unsignedDouble('price')->default(0)->nullable(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
