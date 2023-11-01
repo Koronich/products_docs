@@ -1,0 +1,9 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background: rgb(255, 242, 95, 50%);
+}
+
+.wrapper {
+    margin-inline: 2em;
+    margin-block: 1em;
+}
