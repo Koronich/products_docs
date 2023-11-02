@@ -81,19 +81,28 @@
             let product = JSON.parse($('#current_product').val());
             let delBtnID = `del_${product.id}`;
             let rowId = `row_${product.id}`;
+            let countId = `count_${product.id}`;
 
             $('#registrations').append(
                 $(`<tr id="${rowId}" class="tr_registration">
                         <td>${product.id}<input hidden name="registrations[${product.id}][product_id]" value="${product.id}"></td>
                         <td>${product.article}</td>
                         <td>${product.name}</td>
-                        <td><input name="registrations[${product.id}][count]" type="number" step="1" min="0" value="0"></td>
+                        <td><input id="${countId}" name="registrations[${product.id}][count]" type="number" step="1" min="0" value="0"></td>
                         <td><button id="${delBtnID}" class="btn del_btn"> - </button></td>
                     </tr>`)
             );
             // выключаем выбранный элемент
             $(`#${product.article}`).attr('disabled', 'disabled');
             $('#current_product option:first').prop('selected', true);
+
+            // отключаем активацию кнопки по нажатию Enter в инпуте количества, заменяем на потерю фокуса
+            $(`#${countId}`).on('keydown', function (event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    $(`#${countId}`).trigger('blur');
+                }
+            });
 
             // вешаем на клик код для удаления строки
             let deleteBtn = $(`#${delBtnID}`);
