@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <a href="{{route('products.add')}}">ADD PRODUCT</a>
+    <a class="btn add_btn" href="{{route('products.add')}}">ADD PRODUCT</a>
     <table>
         <thead>
         <tr>
@@ -15,19 +15,19 @@
         </thead>
         <tbody>
         @foreach($products as $product)
-            <tr>
+            <tr class="tr_product">
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->article }}</td>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->count }}</td>
                 <td>
-                    <div>
-                        <a href="{{route('products.edit', $product->id)}}"> Edit </a>
+                    <div class="button_block">
+                        <a class="btn edit_btn" href="{{route('products.edit', $product->id)}}"> Edit </a>
 
                         <form action="{{route('products.delete', $product->id)}}" method="POST">
                             @csrf
-                            <button type="submit" class="border-0 bg-transparent">
+                            <button class="btn del_btn" type="submit">
                                 DELETE
                             </button>
                         </form>

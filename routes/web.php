@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +36,13 @@ Route::controller(ProductController::class)
         Route::post('/delete/{id}', 'delete')
             ->where('id', '[0-9]+')
             ->name('products.delete');
+    });
+
+Route::controller(DocumentController::class)
+    ->prefix('/documents')
+    ->group(function () {
+        Route::get('/', 'index')->name('documents.index');
+        Route::get('/{id}', 'show')->name('documents.show')
+            ->where('id', '[0-9]+');
+        Route::get('/add', 'add')->name('documents.add');
     });

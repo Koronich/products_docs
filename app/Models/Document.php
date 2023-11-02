@@ -19,4 +19,6 @@ class Document extends Model
         'date',
         'type'
     ];
+
+
 }

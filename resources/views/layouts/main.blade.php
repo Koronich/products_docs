@@ -12,11 +12,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+
 </head>
+<header>
+    <a href="{{route('products.index')}}">PRODUCTS</a>
+    <a href="{{route('documents.index')}}">DOCUMENTS</a>
+</header>
 <body class="antialiased">
 {{-- TODO header with links --}}
 <div class="wrapper">
-@yield('content')
+    @yield('content')
 </div>
 </body>
 </html>

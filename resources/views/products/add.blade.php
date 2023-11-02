@@ -6,7 +6,7 @@
         @csrf
         <input type="text" name="article" placeholder="article">
         <input type="text" name="name" placeholder="name">
-        <input type="number" step="0.01" name="price" placeholder="price">
+        <input type="number" step="0.01" min="0" name="price" placeholder="price">
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -18,6 +18,6 @@
             </div>
         @endif
 
-        <button type="submit">Store Product</button>
+        <button class="btn submit" type="submit">Store Product</button>
     </form>
 @stop
