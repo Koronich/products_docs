@@ -23,7 +23,6 @@
     <a href="{{route('documents.index')}}">DOCUMENTS</a>
 </header>
 <body class="antialiased">
-{{-- TODO header with links --}}
 <div class="wrapper">
     @yield('content')
 </div>
