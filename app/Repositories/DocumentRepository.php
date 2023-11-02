@@ -3,12 +3,19 @@
 namespace App\Repositories;
 
 use App\Models\Document;
+use Illuminate\Database\Eloquent\Collection;
 
 class DocumentRepository extends BaseModelRepository
 {
+    /** @var string class of using model */
     protected const MODEL_CLASS = Document::class;
 
-    public static function getWithProducts(int $docId)
+    /**
+     * @param int $docId
+     *
+     * @return ?Collection
+     */
+    public static function getWithProducts(int $docId): ?Collection
     {
         return Document::select([
             'documents.*',

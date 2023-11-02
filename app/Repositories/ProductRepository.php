@@ -3,9 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Product;
-use App\Services\Models\ProductService;
 
 class ProductRepository extends BaseModelRepository
 {
+    /** @var string class of using model */
     protected const MODEL_CLASS = Product::class;
 }

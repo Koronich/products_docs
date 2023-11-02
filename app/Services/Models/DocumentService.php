@@ -8,6 +8,7 @@ use Exception;
 
 class DocumentService extends BaseModelService
 {
+    /** @var string class of using model */
     protected const MODEL_CLASS = Document::class;
 
     /**
@@ -15,7 +16,7 @@ class DocumentService extends BaseModelService
      * @param array $registrations
      * @throws Exception
      */
-    public static function store(array $fields, array $registrations)
+    public static function store(array $fields, array $registrations): void
     {
         $document = self::create($fields);
 
